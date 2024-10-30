@@ -21,8 +21,7 @@ public class C14 {
 		}
 
 		System.out.println();
-		System.out.print("What number do you want to see the price of?");
-		switch (input.nextInt()) {
+		switch (askForNumberInRange("What number do you want to see the price of?", 0, 8)) {
 			case 1: {
 				var item = items.getFirst();
 				System.out.printf("%s cost %d gold.%n", item.name, item.cost);
@@ -65,5 +64,21 @@ public class C14 {
 	}
 
 	public record Item(String name, int cost) {
+	}
+
+	public static int askForNumber(String text) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println(text);
+		return input.nextInt();
+	}
+
+	public static int askForNumberInRange(String text, int min, int max) {
+		while (true) {
+			int result = askForNumber(text);
+			if (result > min && result < max) {
+				return result;
+			}
+		}
 	}
 }
