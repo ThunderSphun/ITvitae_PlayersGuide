@@ -7,7 +7,7 @@ public class C13 {
 		System.out.println("There is an enemy");
 		System.out.print("What is its x?");
 		int xPos = input.nextInt();
-		System.out.print("@hat is its y?");
+		System.out.print("What is its y?");
 		int yPos = input.nextInt();
 
 		if (xPos == 0 && yPos == 0) {
