@@ -27,7 +27,7 @@ public class RunAll {
 					try {
 						return Class.forName(s);
 					} catch (ClassNotFoundException e) {
-						throw new RuntimeException("file " + f + " was not found as a .class file", e);
+						throw new RuntimeException("file " + s + " was not found as a .class file", e);
 					}
 				}) // change file name to class
 				.forEachOrdered(c -> {
